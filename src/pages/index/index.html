@@ -1,0 +1,92 @@
+<!--
+  Generated template for the IndexPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <!--顶部导航-->
+  <ion-navbar>
+    <ion-grid>
+      <ion-row align-items-center justify-content-center>
+        <ion-col col-1>
+          <a href="javascript:;">
+            <ion-icon color="dark" name="camera"></ion-icon>
+          </a>
+        </ion-col>
+        <ion-col>
+          <ion-searchbar></ion-searchbar>
+        </ion-col>
+        <ion-col col-1>
+          <a href="javascript:;">
+            <ion-icon color="dark" name="chatboxes"></ion-icon>
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- 轮播图 -->
+<ion-content padding>
+  <!-- 下拉刷新 -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="dots"
+     refreshingText="正在刷新" pullingIcon="arrow-round-down" pullingText="下拉刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-slides style="height:100px" *ngIf="slideList.length>0" pager="true" loop="true" effect="fade" speed=1000
+    autoplay=1000>
+    <ion-slide *ngFor="let item of slideList">
+      <img [src]="'assets/'+item.img" alt="">
+    </ion-slide>
+  </ion-slides>
+  <!-- banner -->
+
+  <div class="new-products">
+    新品上市
+  </div>
+  <ion-scroll *ngIf="newArrivalItems.length>0" style="height:200px; white-space:nowrap" scrollX="true">
+    <ion-card style="display:inline-block" *ngFor="let item of newArrivalItems">
+      <img style="height:120px;" [src]="'assets/'+item.pic" alt="">
+      <ion-card-content>
+        <h3>{{item.title}}</h3>
+      </ion-card-content>
+    </ion-card>
+  </ion-scroll>
+
+  <!-- 新品推荐 -->
+  <div class="new-products">
+    推荐商品
+  </div>
+  <ion-list *ngIf="recommendedItems.length>0">
+    <ion-item text-wrap *ngFor="let item of recommendedItems">
+      <ion-thumbnail item-left>
+        <a href="javascript:;" [(navPush)]="detail" [navParams]="{pid:item.pid}"><img [src]="'assets/'+item.pic"> </a>
+      </ion-thumbnail>
+      <h3><a class="title" [(navPush)]="detail" [navParams]="{pid:item.pid}" href="javascript:;">{{item.title}}</a></h3>
+      <p style="color: darkgrey; font-size: 12px">{{item.details}}</p>
+      <button ion-button clear item-right [(navPush)]="detail" [navParams]="{pid:item.pid}">
+        <ion-icon style="font-size:24px" slot="end" name="cart"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+  <!-- 热卖商品 -->
+  <div class="new-products">
+    热卖商品
+  </div>
+  <ion-list *ngIf="recommendedItems.length>0">
+    <ion-item text-wrap *ngFor="let item of recommendedItems">
+      <ion-thumbnail item-left>
+        <a href="javascript:;" [(navPush)]="detail" [navParams]="{pid:item.pid}"><img [src]="'assets/'+item.pic"></a>
+      </ion-thumbnail>
+      <h3><a class="title" [(navPush)]="detail" [navParams]="{pid:item.pid}" href="javascript:;">{{item.title}}</a></h3>
+      <p style="color: darkgrey; font-size: 12px">{{item.details}}</p>
+      <button ion-button clear item-right [(navPush)]="detail" [navParams]="{pid:item.pid}">
+        <ion-icon style="font-size:24px" slot="end" name="cart"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

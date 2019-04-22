@@ -1,0 +1,33 @@
+<!--
+  Generated template for the SetupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>设置</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list class="setup">
+    <ion-item>
+      <ion-label><a>省流量模式</a></ion-label>
+      <ion-toggle checked="false"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <a href="javascript:;">清理缓存<span>></span> </a>
+    </ion-item>
+    <ion-item>
+      <a href="javascript:;">版本检测<span>></span></a>
+    </ion-item>
+    <ion-item>
+      <a href="javascript:;">关于我们<span>></span></a>
+    </ion-item>
+  </ion-list>
+  <button class="setupBtn" ion-button color="danger" (click)="loginOut()">退出登录</button>
+</ion-content>
