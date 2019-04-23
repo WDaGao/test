@@ -14,5 +14,22 @@
 
 
 <ion-content padding>
+  <ion-list> 
+    <ion-item *ngFor="let item of getCartList"> 
+        <ion-thumbnail item-left> 
+            <img [src]="'assets/'+item.pic"> 
+        </ion-thumbnail> 
+        <h3 class="bt">{{item.title}}</h3> 
+        <p class="jg"><span>{{item.price}}</span><span>数量:{{item.count}}</span></p> 
+    </ion-item>
+</ion-list>
 
+<ion-footer class="payFooter">
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col size="6">合计:{{goodsCount}}.00</ion-col>
+      <ion-col size="6"><button ion-button color="secondary" (click)="pay()">支付订单</button></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
 </ion-content>

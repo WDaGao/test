@@ -18,7 +18,7 @@
     color: #aaa;
     font-size: 12px;
 }
-.footer{
+.footers{
     height: 70px;
     width: 100%;
     background: #fff;
@@ -28,21 +28,21 @@
     border-top: 1px solid #ccc;
     z-index: 999;
 }
-.footer ion-icon{
+.footers ion-icon{
     color: black;
     font-size: 20px;
     display: block
 }
-.footer a{
+.footers a{
     text-decoration: none;
     text-align: center
 }
-.footer a span{
+.footers a span{
     display: block;
     font-size: 12px;
     color: #aaa;
 }
-.footer .btn{
+.footers .btn{
     padding: 0 35px;
 }
 .describe{

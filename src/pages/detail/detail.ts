@@ -61,6 +61,10 @@ export class DetailPage {
     });
     actionSheet.present();
   }
+  toCart(){
+    console.log(this.navCtrl.parent.select);
+    this.navCtrl.push(CartPage);
+  }
   addToCart() {
     this.myhttp.sendRequest('http://127.0.0.1/ajia_code/datas/cart/add.php?buyCount=1&lid=' + this.goodsId).subscribe((result) => {
       let showMsg:string;

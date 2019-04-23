@@ -23,9 +23,19 @@
 .w_btn button,.w_btn span{
 width: 20px;
 }
-.footer button{
-    width: 100%
-}
-.footer .checkbox{
-   vertical-align: middle
-}
+ .footer{
+    width: 100%;
+ }
+ .footer button{
+     width: 90% 
+ }
+ .footer .checkbox{
+    vertical-align: middle
+ }
+ .footer{
+     position: fixed ;
+     bottom: 0;
+     padding-bottom: 50px ;
+     background: #fff;
+     z-index: 999;
+ }
